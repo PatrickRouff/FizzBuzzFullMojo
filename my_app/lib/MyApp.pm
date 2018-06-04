@@ -16,6 +16,7 @@ sub startup {
 
   # Normal route to controller
   $r->get('/')->to('example#welcome');
+  $r->get('/fb')->to('example#fizzbuzz');
 }
 
 1;

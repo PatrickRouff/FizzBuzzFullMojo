@@ -1,0 +1,20 @@
+% layout 'default';
+% title 'FizzBuzz';
+
+<h2>FizzBuzz ... Overloaded.</h2>
+<p>
+% my $i = 0;
+% while ($i <= 16) {
+%                if ((($i % 3) == 0)&&(($i % 5) == 0)) {
+                        FizzBuzz<br>
+%                } elsif (($i%3) == 0) {
+                        Fizz<br>
+%                } elsif (($i%5)==0) {
+			Buzz<br>
+%                } else {
+			<%= $i%><br>
+%                } 
+
+%                $i++;
+%	}
+</p>
