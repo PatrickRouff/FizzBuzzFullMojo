@@ -1,0 +1,12 @@
+% layout 'default';
+% title 'FizzBuzz';
+
+<h2>FizzBuzz ... Overloaded.</h2>
+<p>
+%= form_for fb => begin
+	%= text_field start => '1'
+	%= text_field end => '16'
+	%= submit_button
+% end
+</p>
+
