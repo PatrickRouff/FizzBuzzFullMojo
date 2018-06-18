@@ -19,9 +19,9 @@ sub startup {
   $r->get('/fb')->to('example#fizzbuzz');
   $r->get('/fblancher')->to('example#fblancher');
   $r->get('/sg')->to('single#game');
-  $r->get('/menu')->('menu#menu');
-  $r->get('/mg')->('multi#game');
-  $r->get('/guide')->('menu#guide');
+  $r->get('/menu')->to('menu#menu');
+  $r->get('/mg')->to('multi#game');
+  $r->get('/guide')->to('menu#guide');
 }
 
 1;
