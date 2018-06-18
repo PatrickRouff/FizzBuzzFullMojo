@@ -1,0 +1,57 @@
+<div id="log"></div>
+<script>
+  var i = 0;
+  var last5 = ["","","","",""];
+  document.addEventListener('keydown', function(event) {
+          translate(event.keyCode);
+  });
+  function translate(input) {
+	if (input == 32) {
+		fbc('n');
+	} else if (input==70) {
+		fbc('f');
+	} else if (input==66) {
+		fbc('b');
+	} else if (input==90) {
+		fbc('z');
+	}
+  }
+  function fbc(pi) {
+	i++; 
+	var tv = '';
+
+	last5[4] = last5[3];
+	last5[3] = last5[2];
+	last5[2] = last5[1];
+	last5[1] = last5[0];
+
+  	if (((i%3)==0)&&((i%5)==0)) {
+		last5[0] = 'FizzBuzz';
+		tv = 'z';
+	} else if ((i%3)==0) {
+		last5[0] = 'Fizz';
+		tv = 'f';
+	} else if ((i%5)==0) {
+		last5[0] = 'Buzz';
+		tv = 'b';
+	} else {
+		last5[0] = i;
+		tv = 'n';
+	}
+
+	if (tv==pi) {
+		document.body.style.backgroundColor = "green";
+	} else {
+		document.body.style.backgroundColor = "red";
+		i = 0;
+		last5 = ["","","","",""];
+	}
+
+	document.getElementById('log').innerHTML = '';
+	document.getElementById('log').innerHTML += '<p>' + last5[0] +  '</p>';
+	document.getElementById('log').innerHTML += '<p>' + last5[1] +  '</p>';
+	document.getElementById('log').innerHTML += '<p>' + last5[2] +  '</p>';
+	document.getElementById('log').innerHTML += '<p>' + last5[3] +  '</p>';
+	document.getElementById('log').innerHTML += '<p>' + last5[4] +  '</p>';
+  }
+</script>

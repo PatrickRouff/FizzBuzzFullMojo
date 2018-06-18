@@ -18,6 +18,7 @@ sub startup {
   $r->get('/')->to('example#welcome');
   $r->get('/fb')->to('example#fizzbuzz');
   $r->get('/fblancher')->to('example#fblancher');
+  $r->get('/sg')->to('single#game');
 }
 
 1;
