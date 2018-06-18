@@ -54,8 +54,8 @@
 	}
 
         document.getElementById('log').innerHTML = '';        
-        document.getElementById('log').innerHTML += '<p>' + '<p> Score </p>' + score + '</p>';
-        document.getElementById('log').innerHTML += '<p>' + '<br>' + '</p>';
+        document.getElementById('log').innerHTML += '<p>' + 'Score: ' + score + '</p>';
+        document.getElementById('log').innerHTML += '<br>';
 	document.getElementById('log').innerHTML += '<p>' + last5[0] +  '</p>';
 	document.getElementById('log').innerHTML += '<p>' + last5[1] +  '</p>';
 	document.getElementById('log').innerHTML += '<p>' + last5[2] +  '</p>';
