@@ -55,6 +55,7 @@
 		i = 0;
 		last5 = ["","","","",""];
 		score = 0;
+		document.getElementById('log').innerHTML += '<center><p>' + 'Press Space to Restart' +  '</p></center>';
 	}
 	        
 	document.getElementById('log').innerHTML = '';
