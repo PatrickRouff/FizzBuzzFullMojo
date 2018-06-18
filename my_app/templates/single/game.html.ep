@@ -1,6 +1,7 @@
 <div id="log"></div>
 <script>
   var i = 0;
+  var score = 0;
   var last5 = ["","","","",""];
   document.addEventListener('keydown', function(event) {
           translate(event.keyCode);
@@ -28,15 +29,19 @@
   	if (((i%3)==0)&&((i%5)==0)) {
 		last5[0] = 'FizzBuzz';
 		tv = 'z';
+		score += 30;
 	} else if ((i%3)==0) {
 		last5[0] = 'Fizz';
 		tv = 'f';
+		score += 20;
 	} else if ((i%5)==0) {
 		last5[0] = 'Buzz';
 		tv = 'b';
+		score += 20;
 	} else {
 		last5[0] = i;
 		tv = 'n';
+		score += 10;
 	}
 
 	if (tv==pi) {
@@ -45,13 +50,17 @@
 		document.body.style.backgroundColor = "red";
 		i = 0;
 		last5 = ["","","","",""];
+		score = 0;
 	}
 
-	document.getElementById('log').innerHTML = '';
+        document.getElementById('log').innerHTML = '';        
+        document.getElementById('log').innerHTML += '<p>' + '<p> Score </p>' + score + '</p>';
+        document.getElementById('log').innerHTML += '<p>' + '<br>' + '</p>';
 	document.getElementById('log').innerHTML += '<p>' + last5[0] +  '</p>';
 	document.getElementById('log').innerHTML += '<p>' + last5[1] +  '</p>';
 	document.getElementById('log').innerHTML += '<p>' + last5[2] +  '</p>';
 	document.getElementById('log').innerHTML += '<p>' + last5[3] +  '</p>';
 	document.getElementById('log').innerHTML += '<p>' + last5[4] +  '</p>';
+
   }
 </script>
