@@ -56,16 +56,16 @@
 		last5 = ["","","","",""];
 		score = 0;
 	}
-
-        document.getElementById('log').innerHTML = '';        
-	document.getElementById('log').innerHTML += '<p>' + '<h1>FizzBuzz... Overloaded! <br> High Score: ' + hscore + '</h1></p>';
-        document.getElementById('log').innerHTML += '<p>' + '<h2>Score: ' + score + '</h2></p>';
+	        
+	document.getElementById('log').innerHTML = '';
+	document.getElementById('log').innerHTML += '<center><p>' + '<h1>FizzBuzz... Overloaded! <br> High Score: ' + hscore + '</h1></p></center>';
+        document.getElementById('log').innerHTML += '<center><p>' + '<h2>Score: ' + score + '</h2></p></center>';
         document.getElementById('log').innerHTML += '<br>';
-	document.getElementById('log').innerHTML += '<p>' + last5[0] +  '</p>';
-	document.getElementById('log').innerHTML += '<p>' + last5[1] +  '</p>';
-	document.getElementById('log').innerHTML += '<p>' + last5[2] +  '</p>';
-	document.getElementById('log').innerHTML += '<p>' + last5[3] +  '</p>';
-	document.getElementById('log').innerHTML += '<p>' + last5[4] +  '</p>';
+	document.getElementById('log').innerHTML += '<center><p>' + last5[0] +  '</p></center>';
+	document.getElementById('log').innerHTML += '<center><p>' + last5[1] +  '</p></center>';
+	document.getElementById('log').innerHTML += '<center><p>' + last5[2] +  '</p></center>';
+	document.getElementById('log').innerHTML += '<center><p>' + last5[3] +  '</p></center>';
+	document.getElementById('log').innerHTML += '<center><p>' + last5[4] +  '</p></center>';
 
   }
 </script>
