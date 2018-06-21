@@ -22,6 +22,8 @@ sub startup {
   $r->get('/menu')->to('menu#menu');
   $r->get('/mg')->to('multi#game');
   $r->get('/guide')->to('menu#guide');
+  $r->get('/modes')->to('multi#modes');
+  $r->get('/hhh')->to('multi#hhh');
 }
 
 1;
