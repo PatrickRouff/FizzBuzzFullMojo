@@ -14,6 +14,13 @@
 	text-align: center;
 	size: 50px;
 	}
+    h3	{
+	color: Tomato;
+	font-family: "Roboto Condensed";
+	text-align: center;
+	size: 30px;
+	font-style: Bold;
+	}
     p	{
 	color: Tomato;
         font-family: "Roboto Condensed";
@@ -29,9 +36,10 @@
 <p>Turns out, these relics provided the code for the game that you are reading aobut right now!</p>
 <p>One of Edward's tablets contained all of the rules by which players must abide. Let's take a look at them</p>
 <p>
+<br>
+<h3>
 Single Player - 
-</p>
-</br>
+</h3>
 <p>
 To be completely honest, SinglePlayer is quite possibly the most underwhelming game mode there is. It just tests players out to see how quickly and accurately they can list out the sequence. So, it is awesome practice, but it gets pretty lonely after a while!
 </p>
@@ -43,7 +51,7 @@ Multiplayer: Hungry Hungry Hippos -
 Now we're getting juicy! Two opposing players must race to guess each value first, starting at "1". Once somebody guesses correctly, that player is awarded with the appropriate amount of points and both players must race again to guess the next consecutive value.
 </p>
 <p>
-The game ends when the sequence reaches "150". The player at the end of the game with the most points
+The game ends when the sequence reaches "150". The player at the end of the game with the most points wins.
 </p>
 <p>
 If a player guesses incorrectly, he/she cannot guess anymore for the value that is in play. That player must wait for the other to guess correctly.
