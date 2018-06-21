@@ -3,7 +3,7 @@
 
 
 <head>
-  <title>Welcome</title>
+  <title>Guide</title>
   <style>
     @import url('https://fonts.googleapis.com/css?family=Roboto+Condensed');
     @import url('https://fonts.googleapis.com/css?family=Roboto');
@@ -24,11 +24,10 @@
 </head>
 
 <body>
-<h2>Welcome to FizzBuzz</h2>
+<h2>FizzBuzz Guide</h2>
+<p>Long ago, long before any scrap or sign of human civilization, a lowley hermit named Edward produced a series of runes and tablets with strange inscriptions that historians today call the "Fizz Buzz" tablets. After tireless investigation, historians have concluded that these inscriptions were written in HTML5, CSS, JavaScript, and Perl.</p>
 <p>
-  <%= link_to 'SinglePlayer' => ('sg') %>
-  <%= link_to 'MultiPlayer' => ('modes') %>
-  <%= link_to 'Guide' => ('guide') %>
+  <%= link_to 'Menu' => ('menu') %>
 </p>
 </body>
 </html>
