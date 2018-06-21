@@ -1,5 +1,6 @@
 package MyApp;
 use Mojo::Base 'Mojolicious';
+use Mojo::Pg;
 
 # This method will run once at server start
 sub startup {
@@ -10,7 +11,9 @@ sub startup {
 
   # Documentation browser under "/perldoc"
   $self->plugin('PODRenderer') if $config->{perldoc};
-
+  
+  # Helpers
+  $self->helper('pg' => sub { state $pg = Mojo::Pg->new('postgresql://ubuntu@/test') } );
   # Router
   my $r = $self->routes;
 
@@ -20,10 +23,11 @@ sub startup {
   $r->get('/fblancher')->to('example#fblancher');
   $r->get('/sg')->to('single#game');
   $r->get('/menu')->to('menu#menu');
-  $r->get('/mg')->to('multi#game');
-  $r->get('/guide')->to('menu#guide');
-  $r->get('/modes')->to('multi#modes');
   $r->get('/hhh')->to('multi#hhh');
+  $r->get('/guide')->to('menu#guide');
+  $r->websocket('/hhhr')->to('hhh#hhhr');
+  $r->get('/modes')->to('multi#modes');
+  $r->get('/hhh')->to('multi#hhh')
 }
 
 1;
