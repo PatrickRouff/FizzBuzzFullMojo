@@ -26,6 +26,31 @@
 <body>
 <h2>FizzBuzz Guide</h2>
 <p>Long ago, long before any scrap or sign of human civilization, a lowley hermit named Edward produced a series of runes and tablets with strange inscriptions that historians today call the "Fizz Buzz" tablets. After tireless investigation, historians have concluded that these inscriptions were written in HTML5, CSS, JavaScript, and Perl.</p>
+<p>Turns out, these relics provided the code for the game that you are reading aobut right now!</p>
+<p>One of Edward's tablets contained all of the rules by which players must abide. Let's take a look at them</p>
+<p>
+Single Player - 
+</p>
+</br>
+<p>
+To be completely honest, SinglePlayer is quite possibly the most underwhelming game mode there is. It just tests players out to see how quickly and accurately they can list out the sequence. So, it is awesome practice, but it gets pretty lonely after a while!
+</p>
+</br>
+<p>
+Multiplayer: Hungry Hungry Hippos -
+</p>
+<p>
+Now we're getting juicy! Two opposing players must race to guess each value first, starting at "1". Once somebody guesses correctly, that player is awarded with the appropriate amount of points and both players must race again to guess the next consecutive value.
+</p>
+<p>
+The game ends when the sequence reaches "150". The player at the end of the game with the most points
+</p>
+<p>
+If a player guesses incorrectly, he/she cannot guess anymore for the value that is in play. That player must wait for the other to guess correctly.
+</p>
+<p>
+If both players guess incorrectly, the game ends.
+</p>
 <p>
   <%= link_to 'Menu' => ('menu') %>
 </p>
