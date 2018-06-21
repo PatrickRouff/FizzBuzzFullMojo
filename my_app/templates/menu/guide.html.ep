@@ -25,7 +25,7 @@
 
 <body>
 <h2>FizzBuzz Guide</h2>
-<p>Long ago, long before any scrap or sign of human civilization, a lowley hermit named Edward produced a series of runes and tablets with strange insscriptions that historians today call the "Fizz Buzz" tablets. After tireless investigation, historians have concluded that these inscriptions were written in HTML5, CSS, JavaScript, and Perl.</p>
+<p>Long ago, long before any scrap or sign of human civilization, a lowley hermit named Edward produced a series of runes and tablets with strange inscriptions that historians today call the "Fizz Buzz" tablets. After tireless investigation, historians have concluded that these inscriptions were written in HTML5, CSS, JavaScript, and Perl.</p>
 <p>
   <%= link_to 'Menu' => ('menu') %>
 </p>
