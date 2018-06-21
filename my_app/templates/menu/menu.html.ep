@@ -27,7 +27,7 @@
 <h2>Welcome to FizzBuzz</h2>
 <p>
   <%= link_to 'SinglePlayer' => ('sg') %>
-  <%= link_to 'MultiPlayer' => ('mg') %>
+  <%= link_to 'MultiPlayer' => ('modes') %>
   <%= link_to 'Guide' => ('guide') %>
 </p>
 </body>
