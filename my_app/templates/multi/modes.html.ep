@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+
+
+<head>
+  <title>Welcome</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css?family=Roboto+Condensed');
+    @import url('https://fonts.googleapis.com/css?family=Roboto');
+
+    h2  {
+        color: Tomato;
+        font-family: "Roboto Condensed";
+        text-align: center;
+        size: 50px;
+        }
+    p   {
+        color: Tomato;
+        font-family: "Roboto Condensed";
+        text-align: center;
+        size: 20px;
+        }
+  </style>
+</head>
+
+<body>
+<h2>Multiplayer Game Modes</h2>
+<p>
+  <%= link_to 'Hungry Hungry Hippos' => ('hhh') %>
+</p>
+</body>
+</html>
