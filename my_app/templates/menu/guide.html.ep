@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+
+
+<head>
+  <title>Guide</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css?family=Roboto+Condensed');
+    @import url('https://fonts.googleapis.com/css?family=Roboto');
+    
+    h2	{
+	color: Tomato;
+	font-family: "Roboto Condensed";
+	text-align: center;
+	size: 50px;
+	}
+    p	{
+	color: Tomato;
+        font-family: "Roboto Condensed";
+        text-align: center;
+	size: 20px;
+	}
+  </style>
+</head>
+
+<body>
+<h2>FizzBuzz Guide</h2>
+<p>Long ago, long before any scrap or sign of human civilization, a lowley hermit named Edward produced a series of runes and tablets with strange insscriptions that historians today call the "Fizz Buzz" tablets. After tireless investigation, historians have concluded that these inscriptions were written in HTML5, CSS, JavaScript, and Perl.</p>
+<p>
+  <%= link_to 'Menu' => ('menu') %>
+</p>
+</body>
+</html>
