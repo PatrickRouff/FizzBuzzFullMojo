@@ -1,0 +1,13 @@
+<div id="log"></div>
+<script>
+  document.addEventListener('keydown', function(event) {
+      if(event.keyCode == 32) {
+          fbc();
+      }
+  });
+  var ws  = new WebSocket('<%= url_for('channel')->to_abs %>');
+  function fbc() { ws.send('PING');}
+  ws.onmessage = function (e) {
+    document.getElementById('log').innerHTML += '<p>' + e.data + '</p>';
+  };
+</script>
