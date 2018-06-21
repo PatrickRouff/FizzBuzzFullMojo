@@ -1,17 +1,21 @@
 <div id="log"></div>
 <script>
-  var ws  = new WebSocket('<%= url_for('hhhr')->to_abs %>');
-  ws.onmessage = function (e) {
-   if (sent==1) { running = 1;}
-   fbc(e.data);
-  };
-
   var running = 0;
   var sent = 1;
+  var wrong = 1;
+  var temp = '';
   var i = 0;
   var score = 0;
   var hscore = 0;
   var last5 = ["","","","",""];
+
+  var ws  = new WebSocket('<%= url_for('hhhr')->to_abs %>');
+  ws.onmessage = function (e) {
+   if (sent==1) { running = 1;}
+   wrong = 1;
+   fbc(e.data);
+  };
+
   document.addEventListener('keydown', function(event) {
           if (running==0){translate(event.keyCode);}
   });
@@ -34,27 +38,32 @@
 	i++; 
 	var tv = '';
 
-	last5[4] = last5[3];
-	last5[3] = last5[2];
-	last5[2] = last5[1];
-	last5[1] = last5[0];
-
   	if (((i%3)==0)&&((i%5)==0)) {
-		last5[0] = 'FizzBuzz';
+		temp = 'FizzBuzz';
 		tv = 'z';
 		if (running==0) {score += 30;}
 	} else if ((i%3)==0) {
-		last5[0] = 'Fizz';
+		temp = 'Fizz';
 		tv = 'f';
 		if (running==0) {score += 20;}
 	} else if ((i%5)==0) {
-		last5[0] = 'Buzz';
+		temp = 'Buzz';
 		tv = 'b';
 		if (running==0) {score += 20;}
 	} else {
-		last5[0] = i;
+		temp = i;
 		tv = 'n';
 		if (running==0) {score += 10;}
+	}
+	
+	if (tv==pi) {
+		last5[4] = last5[3];
+        	last5[3] = last5[2];
+        	last5[2] = last5[1];
+        	last5[1] = last5[0];
+		last5[0] = temp;
+	} else {
+		i--;
 	}
 
 	if (running==0) {	
@@ -69,6 +78,7 @@
 			//last5 = ["","","","",""];
 			score = 0;
 			//document.getElementById('log').innerHTML += '<center><p>' + 'Press Space to Restart' +  '</p></center>';
+			wrong = 0;
 		}
 	}
 	        
@@ -82,7 +92,12 @@
 	document.getElementById('log').innerHTML += '<center><p>' + last5[3] +  '</p></center>';
 	document.getElementById('log').innerHTML += '<center><p>' + last5[4] +  '</p></center>';
   	
-	running = 0;
-	sent = 1;
+	if (wrong == 1) {
+		running = 0;
+		sent = 1;
+	} else {
+		running = 1;
+		sent = 1;
+	}
   }
 </script>

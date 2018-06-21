@@ -23,7 +23,7 @@ sub startup {
   $r->get('/fblancher')->to('example#fblancher');
   $r->get('/sg')->to('single#game');
   $r->get('/menu')->to('menu#menu');
-  $r->get('/mg')->to('multi#game');
+  $r->get('/hhh')->to('multi#hhh');
   $r->get('/guide')->to('menu#guide');
   $r->websocket('/hhhr')->to('hhh#hhhr');
 }
