@@ -1,0 +1,112 @@
+<div id="log"></div>
+<script>
+  var running = 0;
+  var sent = 1;
+  var wrong = 1;
+  var temp = '';
+  var i = 0;
+  var score = 0;
+  var hscore = 0;
+  var last5 = ["","","","",""];
+
+
+  var ws  = new WebSocket('<%= url_for('hhhr')->to_abs %>');
+  ws.onmessage = function (e) {
+   if (sent==1) { running = 1;}
+   wrong = 1;
+   fbc(e.data);
+  };
+
+  document.addEventListener('keydown', function(event) {
+          if (running==0){translate(event.keyCode);}
+  });
+  function translate(input) {
+	if (input == 32) {
+		ws.send('n');
+		sent = 0;
+	} else if (input==70) {
+		ws.send('f');
+		sent = 0;
+	} else if (input==66) {
+		ws.send('b');
+		sent = 0;
+	} else if (input==90) {
+		ws.send('z');
+		sent = 0;
+	}
+  }
+  function fbc(pi) {
+	i++; 
+	var tv = '';
+	var random = '';
+
+	if (i == 0) {random = 1;}
+	// players hit "space" to proceed
+	if (i > 0) {random = Math.floor(Math.random() * 100) + 1;} 
+	// returns a random integer from 1 to 100 
+
+  	if (((i%3)==0)&&((i%5)==0)) {
+		temp = 'FizzBuzz';
+		tv = 'z';
+		if (running==0) {score += 30;}
+	} else if ((i%3)==0) {
+		temp = 'Fizz';
+		tv = 'f';
+		if (running==0) {score += 20;}
+	} else if ((i%5)==0) {
+		temp = 'Buzz';
+		tv = 'b';
+		if (running==0) {score += 20;}
+	} else {
+		temp = i;
+		tv = 'n';
+		if (running==0) {score += 10;}
+	}
+	
+	if (tv==pi) {
+		last5[4] = last5[3];
+        	last5[3] = last5[2];
+        	last5[2] = last5[1];
+        	last5[1] = last5[0];
+		last5[0] = temp;
+	} else {
+		i--;
+	}
+
+	if (running==0) {	
+		if (tv==pi) {
+			document.body.style.backgroundColor = "green";
+			if (hscore<score) { 
+        	        	hscore = score;
+        		}
+		} else {
+			document.body.style.backgroundColor = "red";
+			//i = 0;
+			//last5 = ["","","","",""];
+			score = 0;
+			//document.getElementById('log').innerHTML += '<center><p>' + 'Press Space to Restart' +  '</p></center>';
+			wrong = 0;
+		}
+	}
+	        
+	document.getElementById('log').innerHTML = '';
+	document.getElementById('log').innerHTML += '<center><p>' + '<h1>FizzBuzz... Overloaded! <br> High Score: ' + hscore + '</h1></p></center>';
+        document.getElementById('log').innerHTML += '<center><p>' + '<h2>Score: ' + score + '</h2></p></center>';
+        document.getElementById('log').innerHTML += '<br>';
+        document.getElementById('log').innerHTML += '<center><p>' + '<h2>Value: ' + random + '</h2></p></center>';
+        document.getElementById('log').innerHTML += '<br>';
+	document.getElementById('log').innerHTML += '<center><p>' + last5[0] +  '</p></center>';
+	document.getElementById('log').innerHTML += '<center><p>' + last5[1] +  '</p></center>';
+	document.getElementById('log').innerHTML += '<center><p>' + last5[2] +  '</p></center>';
+	document.getElementById('log').innerHTML += '<center><p>' + last5[3] +  '</p></center>';
+	document.getElementById('log').innerHTML += '<center><p>' + last5[4] +  '</p></center>';
+  	
+	if (wrong == 1) {
+		running = 0;
+		sent = 1;
+	} else {
+		running = 1;
+		sent = 1;
+	}
+  }
+</script>
