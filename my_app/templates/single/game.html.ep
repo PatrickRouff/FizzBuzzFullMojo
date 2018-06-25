@@ -6,7 +6,8 @@
   var last5 = ["","","","",""];
   var tempi = ["","","","",""];
   var tempp = 0;
-  var currenti = "";
+  var currenti = "Enter A Value to Begin";
+  output();
   var timer = setInterval(tick,3000);
   function tick() {
 	//alert("tick");
@@ -107,6 +108,10 @@
 		score += 10;
 	}
 
+	tempi = ["","","","",""];
+        tempp = 0;
+        currenti = "";
+
 	if (tv==pi) {
 		document.body.style.backgroundColor = "green";
 		if (hscore<score) { 
@@ -117,11 +122,8 @@
 		i = 0;
 		last5 = ["","","","",""];
 		score = 0;
-		document.getElementById('log').innerHTML += '<center><p>' + 'Press Space to Restart' +  '</p></center>';
+		currenti = "Enter a Value to Try Again.";
 	}
-	tempi = ["","","","",""];
-	tempp = 0;
-	currenti = "";
 	output();
 	
   }
