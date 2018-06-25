@@ -59,6 +59,10 @@
 		case 8: 
 			backspace();
 			break;
+		case 13:
+			fbc(currenti);
+			clearInterval(timer);
+			timer = setInterval(tick,3000);
 		default:
 			
 	}
