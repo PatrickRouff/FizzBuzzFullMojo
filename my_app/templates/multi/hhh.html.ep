@@ -16,6 +16,18 @@
    fbc(e.data);
   };
 
+  var sync  = new WebSocket('<%= url_for('hhhs')->to_abs %>');
+  sync.onmessage = function (e) {
+ 	alert(e.data);
+  	if(e.data>i) {
+		i = e.data;
+	}
+  };
+  var synci = setInterval(syncnow, 3000);
+  function syncnow() {
+	sync.send(i);
+  }
+
   document.addEventListener('keydown', function(event) {
           if (running==0){translate(event.keyCode);}
   });

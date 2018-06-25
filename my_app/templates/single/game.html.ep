@@ -4,23 +4,81 @@
   var score = 0;
   var hscore = 0;
   var last5 = ["","","","",""];
+  var tempi = ["","","","",""];
+  var tempp = 0;
+  var currenti = "";
+  var timer = setInterval(tick,3000);
+  function tick() {
+	//alert("tick");
+	fbc(currenti);
+  }
   document.addEventListener('keydown', function(event) {
           translate(event.keyCode);
   });
   function translate(input) {
-	if (input == 32) {
-		fbc('n');
-	} else if (input==70) {
-		fbc('f');
-	} else if (input==66) {
-		fbc('b');
-	} else if (input==90) {
-		fbc('z');
+	switch (input) {
+		case 48:
+			build("0");
+			break;
+		case 49:
+                        build("1");
+                        break;
+		case 50:
+                        build("2");
+                        break;
+		case 51:
+                        build("3");
+                        break;
+		case 52:
+                        build("4");
+                        break;
+		case 53:
+                        build("5");
+                        break;
+		case 54:
+                        build("6");
+                        break;
+		case 55:
+                        build("7");
+                        break;
+		case 56:
+                        build("8");
+                        break;
+		case 57:
+                        build("9");
+                        break;
+		case 70:
+                        build("f");
+                        break;
+		case 66:
+                        build("b");
+                        break;
+		case 90:
+                        build("z");
+                        break;
+		case 8: 
+			backspace();
+			break;
+		default:
+			
 	}
+  }
+  function build(ti) {
+	tempi[tempp] = ti;
+	tempp++;
+	currenti = tempi[0].toString() + tempi[1].toString() + tempi[2].toString() + tempi[3].toString() + tempi[4].toString();
+	//alert(currenti);
+	output();
+  }
+  function backspace() {
+	tempp--;
+	tempi[tempp] = "";
+	currenti = tempi[0].toString() + tempi[1].toString() + tempi[2].toString() + tempi[3].toString() + tempi[4].toString();
+	output();
   }
   function fbc(pi) {
 	i++; 
-	var tv = '';
+	var tv = "";
 
 	last5[4] = last5[3];
 	last5[3] = last5[2];
@@ -29,19 +87,19 @@
 
   	if (((i%3)==0)&&((i%5)==0)) {
 		last5[0] = 'FizzBuzz';
-		tv = 'z';
+		tv = "z";
 		score += 30;
 	} else if ((i%3)==0) {
 		last5[0] = 'Fizz';
-		tv = 'f';
+		tv = "f";
 		score += 20;
 	} else if ((i%5)==0) {
 		last5[0] = 'Buzz';
-		tv = 'b';
+		tv = "b";
 		score += 20;
 	} else {
 		last5[0] = i;
-		tv = 'n';
+		tv = i.toString();
 		score += 10;
 	}
 
@@ -57,16 +115,22 @@
 		score = 0;
 		document.getElementById('log').innerHTML += '<center><p>' + 'Press Space to Restart' +  '</p></center>';
 	}
-	        
+	tempi = ["","","","",""];
+	tempp = 0;
+	currenti = "";
+	output();
+	
+  }
+  function output() {
 	document.getElementById('log').innerHTML = '';
-	document.getElementById('log').innerHTML += '<center><p>' + '<h1>FizzBuzz... Overloaded! <br> High Score: ' + hscore + '</h1></p></center>';
+        document.getElementById('log').innerHTML += '<center><p>' + '<h1>FizzBuzz... Overloaded! <br> High Score: ' + hscore + '</h1></p></center>';
         document.getElementById('log').innerHTML += '<center><p>' + '<h2>Score: ' + score + '</h2></p></center>';
         document.getElementById('log').innerHTML += '<br>';
-	document.getElementById('log').innerHTML += '<center><p>' + last5[0] +  '</p></center>';
-	document.getElementById('log').innerHTML += '<center><p>' + last5[1] +  '</p></center>';
-	document.getElementById('log').innerHTML += '<center><p>' + last5[2] +  '</p></center>';
-	document.getElementById('log').innerHTML += '<center><p>' + last5[3] +  '</p></center>';
-	document.getElementById('log').innerHTML += '<center><p>' + last5[4] +  '</p></center>';
-
+	document.getElementById('log').innerHTML += '<center><p><h2>' + currenti + '</h2></p></center>';
+        document.getElementById('log').innerHTML += '<center><p>' + last5[0] +  '</p></center>';
+        document.getElementById('log').innerHTML += '<center><p>' + last5[1] +  '</p></center>';
+        document.getElementById('log').innerHTML += '<center><p>' + last5[2] +  '</p></center>';
+        document.getElementById('log').innerHTML += '<center><p>' + last5[3] +  '</p></center>';
+        document.getElementById('log').innerHTML += '<center><p>' + last5[4] +  '</p></center>';
   }
 </script>

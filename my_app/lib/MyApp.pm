@@ -26,8 +26,8 @@ sub startup {
   $r->get('/hhh')->to('multi#hhh');
   $r->get('/guide')->to('menu#guide');
   $r->websocket('/hhhr')->to('hhh#hhhr');
+  $r->websocket('/hhhs')->to('hhh#hhhs');
   $r->get('/modes')->to('multi#modes');
-  $r->get('/hhh')->to('multi#hhh')
 }
 
 1;
